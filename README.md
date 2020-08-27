@@ -503,3 +503,42 @@ Step 19: Reuse Dialogs
 
 目前我们将 Dialog 抽离出来了，Dialog 的用户交互事件仍然在 App.controller 中处理。如果想要在别的地方复用这个 Dialog 那么就必须再次将用户交互逻辑拷贝到相应的 Controller 中，这导致了大量的代码冗余。为了更好的复用 Dialog，我们可以将这部分公共的用户交互逻辑提升到 Component 一级。
 
+
+
+Step 20: Aggregation bindings
+
+ 在 manifest.json 中添加一个 JSONModel invoice，
+
+*manifest.json*
+
+```json
+ "invoice": {
+		"type": "sap.ui.model.json.JSONModel",
+		"uri": "model/Invoices.json"
+	}
+```
+
+其中 uri 指向的是相对于 Component 的资源路径。
+
+创建一个 InvoiceList.view.xml，
+
+*view/InvoiceList.view.xml*
+
+```xml
+<mvc:View
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">
+   <List
+      headerText="{i18n>invoiceListTitle}"
+      class="sapUiResponsiveMargin"
+      width="auto"
+      items="{invoice>/Invoices}" >
+      <items>
+         <ObjectListItem
+            title="{invoice>Quantity} x {invoice>ProductName}"/>
+      </items>
+   </List>
+</mvc:View>
+```
+
+items aggregation 和 invoice model 通过 `items="{invoice>/Invoices}"`的 Invoices 资源进行了绑定，这种绑定叫做 Aggregation Binding。`ObjectListItem` 定义了每个 item 的渲染模板，使用绑定的 model 名字 + `>` 取数据，如 `invoice>Quantity` 表示 invoice model 中的 Invoices 数组下每个元素中的 Quantity 属性。
