@@ -1,0 +1,9 @@
+{
+  "name": "sapui5-walkthrough",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "ui5 serve"
+  }
+}
