@@ -382,3 +382,11 @@ Step 11:  Pages and Panels
 Step 12: Shell
 
 使用 Shell 作为最外层容器，宽屏显示时 Shell 会自动缩放成一个“信封”样式。
+
+
+
+Step 12: Margins and Paddings
+
+使用 SAPUI5 提供的默认 CSS 标准类，`sapUiResponsiveMargin`，`sapUiSmallMarginEnd`， `sapUiSmallMargin` 自动调节 Margins 和 Paddings。
+
+`sapUiResponsiveMargin`  会随着窗口大小的改变而自适应调整 Margin。
