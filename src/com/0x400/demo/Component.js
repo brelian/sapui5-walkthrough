@@ -1,8 +1,8 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
     "sap/ui/model/json/JSONModel",
-    "sap/ui/model/resource/ResourceModel"
-], function (UIComponent, JSONModel, ResourceModel) {
+    "./controller/HelloDialog.controller"
+], function (UIComponent, JSONModel, HelloDialog) {
     return UIComponent.extend("com.0x400.demo.Component", {
         metadata: {
             manifest: "json"
@@ -13,6 +13,15 @@ sap.ui.define([
                 recipient: { firstName: "Pylon", lastName: "Syncher"}
             });
             this.setModel(oModel);
+            // set common dialog
+            this._helloDialog = new HelloDialog(this.getRootControl());
+        },
+        exit: function () {
+            this._helloDialog.destroy();
+            delete this._helloDialog;
+        },
+        openHelloDialog: function () {
+            this._helloDialog.open();
         }
     });
 });

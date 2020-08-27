@@ -7,6 +7,11 @@
         <App class="myAppDemoWT">
             <pages>
                 <Page title="{i18n>pageTitle}">
+                    <headerContent>
+                        <Button
+                                icon="sap-icon://hello-world"
+                                press=".onOpenDialog"/>
+                    </headerContent>
                     <content>
                         <mvc:XMLView viewName="com.0x400.demo.view.HelloPanel" />
                     </content>

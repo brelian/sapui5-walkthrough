@@ -497,3 +497,9 @@ Steps 18: Icons
 
 使用 sap.ui.core.Icon  引入 SAPUI5 内置的 icon, 通过设置 src 属性为 `sap-icon://<iconname>` 选择要引入的 Icon。请查阅 [Icon Explore](https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/iconExplorer/webapp/index.html) 找到你想要的 Icon。
 
+
+
+Step 19: Reuse Dialogs
+
+目前我们将 Dialog 抽离出来了，Dialog 的用户交互事件仍然在 App.controller 中处理。如果想要在别的地方复用这个 Dialog 那么就必须再次将用户交互逻辑拷贝到相应的 Controller 中，这导致了大量的代码冗余。为了更好的复用 Dialog，我们可以将这部分公共的用户交互逻辑提升到 Component 一级。
+
