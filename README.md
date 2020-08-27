@@ -492,3 +492,8 @@ Fragment.load({
 ```
 
 加载 fragments 时，使用 controller 参数传递 fragments 的 controller。（因为 fragments 没有特定的 controller）。
+
+Steps 18: Icons
+
+使用 sap.ui.core.Icon  引入 SAPUI5 内置的 icon, 通过设置 src 属性为 `sap-icon://<iconname>` 选择要引入的 Icon。请查阅 [Icon Explore](https://sapui5.hana.ondemand.com/test-resources/sap/m/demokit/iconExplorer/webapp/index.html) 找到你想要的 Icon。
+
