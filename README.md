@@ -478,3 +478,17 @@ Fragments 是一些可复用的组件，这些组件没有 Controller。
 ```
 
 该方法中使用 sap.ui.core.Fragment 加载相应的 fragments。通过 `oView.addDependent(oDialog)` 将 Dialog 和 View 进行连接，从而使得定义 Dialog 的 Fragments 中可以读到 oView 上的 Model 完成数据绑定。
+
+
+
+Step 17: Fragments callbacks
+
+```js
+Fragment.load({
+    id: oView.getId(),
+    name: "com.0x400.demo.view.HelloDialog",
+    controller: this
+});
+```
+
+加载 fragments 时，使用 controller 参数传递 fragments 的 controller。（因为 fragments 没有特定的 controller）。
