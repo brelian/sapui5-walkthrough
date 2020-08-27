@@ -376,3 +376,9 @@ Step 11:  Pages and Panels
  
 
 小写为 aggregations，大写为组件。如 pages 是 sap.m.App 的一个 0...n 的 aggregation。 sap.m.Page 和 sap.m.Panel 都由一个 0...n 的 aggregation， 0...n 表示可以聚合多个控件。`displayBlock` 用于矫正全屏时候的高度。
+
+
+
+Step 12: Shell
+
+使用 Shell 作为最外层容器，宽屏显示时 Shell 会自动缩放成一个“信封”样式。

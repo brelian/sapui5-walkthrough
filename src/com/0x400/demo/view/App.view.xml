@@ -3,29 +3,30 @@
         displayBlock="true"
         xmlns="sap.m"
         xmlns:mvc="sap.ui.core.mvc">
-    <App>
-        <pages>
-            <Page title="{i18n>pageTitle}">
-                <content>
-                    <Panel headerText="{i18n>helloPanelTitle}">
-                        <content>
-                            <Button text="{i18n>showHelloButtonText}"
-                                     press=".onSayHello" />
-                            <Input
-                                    value="{/recipient/firstName}"
-                                    description="{/recipient/firstName}"
-                                    valueLiveUpdate="true"
-                                    width="30%" />
-                            <Input
-                                    value="{/recipient/lastName}"
-                                    description="Hello {/recipient/lastName}"
-                                    valueLiveUpdate="true"
-                                    width="30%" />
-                        </content>
-                    </Panel>
-                </content>
-            </Page>
-        </pages>
-    </App>
-
+    <Shell>
+        <App>
+            <pages>
+                <Page title="{i18n>pageTitle}">
+                    <content>
+                        <Panel headerText="{i18n>helloPanelTitle}">
+                            <content>
+                                <Button text="{i18n>showHelloButtonText}"
+                                        press=".onSayHello" />
+                                <Input
+                                        value="{/recipient/firstName}"
+                                        description="{/recipient/firstName}"
+                                        valueLiveUpdate="true"
+                                        width="30%" />
+                                <Input
+                                        value="{/recipient/lastName}"
+                                        description="Hello {/recipient/lastName}"
+                                        valueLiveUpdate="true"
+                                        width="30%" />
+                            </content>
+                        </Panel>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
 </mvc:View>
