@@ -415,3 +415,14 @@ Step 13: 自定义 CSS
 ```
 
 使用 resources 指定自定义 css 的路径，自定义的 css 可以有很多个，所以 css 是一个数组。
+
+
+
+Step 15: 嵌套的 Views
+
+将 Panel 拆分成一个 View，并在 App.view.xml 中引入
+
+```js
+<mvc:XMLView viewName="sap.ui.demo.walkthrough.view.HelloPanel"/>
+```
+
