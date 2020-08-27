@@ -2,7 +2,7 @@
         controllerName="com.0x400.demo.controller.App"
         xmlns="sap.m"
         xmlns:mvc="sap.ui.core.mvc">
-    <Button text="Say Hello" press=".onSayHello" />
+    <Button text="{i18n>showHelloButtonText}" press=".onSayHello" />
     <Input
         value="{/recipient/firstName}"
         description="{/recipient/firstName}"
