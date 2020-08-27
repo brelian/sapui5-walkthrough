@@ -3,5 +3,14 @@
   "sap.app": {
     "id": "com.0x400.demo",
     "type": "application"
+  },
+  "sap.ui5": {
+    "_version": "1.0.1",
+    "rootView": {
+      "viewName": "com.0x400.demo.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    }
   }
 }

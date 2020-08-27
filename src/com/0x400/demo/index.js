@@ -5,6 +5,7 @@ sap.ui.define([
 
     new ComponentContainer({
         name: "com.0x400.demo",
+        manifest: true,
         async: true
     }).placeAt("content");
 });

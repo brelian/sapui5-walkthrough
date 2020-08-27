@@ -4,14 +4,6 @@ sap.ui.define([
     "sap/ui/model/resource/ResourceModel"
 ], function (UIComponent, JSONModel, ResourceModel) {
     return UIComponent.extend("com.0x400.demo.Component", {
-        metadata: {
-            "rootView": {
-                "viewName": "com.0x400.demo.view.App",
-                "type": "XML",
-                "async": true,
-                "id": "app"
-            }
-        },
         init: function () {
             UIComponent.prototype.init.apply(this);
             var oModel = new JSONModel({
