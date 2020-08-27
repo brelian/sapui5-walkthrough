@@ -390,3 +390,28 @@ Step 12: Margins and Paddings
 使用 SAPUI5 提供的默认 CSS 标准类，`sapUiResponsiveMargin`，`sapUiSmallMarginEnd`， `sapUiSmallMargin` 自动调节 Margins 和 Paddings。
 
 `sapUiResponsiveMargin`  会随着窗口大小的改变而自适应调整 Margin。
+
+
+
+Step 13: 自定义 CSS
+
+*manifest.json*
+
+```shell
+  "sap.ui5": {
+	...
+    "models": {
+		...
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    }
+  },
+...
+```
+
+使用 resources 指定自定义 css 的路径，自定义的 css 可以有很多个，所以 css 是一个数组。
