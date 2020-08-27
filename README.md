@@ -426,3 +426,55 @@ Step 15: 嵌套的 Views
 <mvc:XMLView viewName="sap.ui.demo.walkthrough.view.HelloPanel"/>
 ```
 
+
+
+Step 16: Dialogs and Fragments
+
+Fragments 是一些可复用的组件，这些组件没有 Controller。
+
+使用`sap.ui.core.FragmentDefinition` 定义 Fragment，如
+
+```xml
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core" >
+   <Dialog
+      id="helloDialog"
+      title="Hello {/recipient/name}">
+   </Dialog>
+</core:FragmentDefinition>
+```
+
+在 HelloPanel.view.xml 中有个 Button，点击时会弹出对话框，
+
+```xml
+<Button
+        id="helloDialogButton"
+        text="{i18n>openDialogButtonText}"
+        press=".onOpenDialog"
+        class="sapUiSmallMarginEnd"/>
+```
+
+在 HelloPanel.controller.js 中定义 onOpenDialog 方法用于打开对话框，
+
+```js
+...
+		onOpenDialog: function () {
+            var oView = this.getView();
+
+            if(!this.byId("helloDialog")) {
+                Fragment.load({
+                    id: oView.getId(),
+                    name: "com.0x400.demo.view.HelloDialog"
+                }).then(function (oDialog) {
+                    oView.addDependent(oDialog);
+                    oDialog.open();
+                });
+            } else {
+                this.byId("helloDialog").open();
+            }
+        }
+...
+```
+
+该方法中使用 sap.ui.core.Fragment 加载相应的 fragments。通过 `oView.addDependent(oDialog)` 将 Dialog 和 View 进行连接，从而使得定义 Dialog 的 Fragments 中可以读到 oView 上的 Model 完成数据绑定。
