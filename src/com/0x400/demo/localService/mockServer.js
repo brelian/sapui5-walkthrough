@@ -16,7 +16,7 @@ sap.ui.define([
                 autoRespondAfter: oUriParameters.get("serverDelay") || 400
             });
 
-            var sPath = "../localService";
+            var sPath = sap.ui.require.toUrl("com/0x400/demo") + "/localService";
             oMockerServer.simulate(sPath + "/metadata.xml", sPath + "/mockdata");
 
             oMockerServer.start();

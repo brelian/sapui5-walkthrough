@@ -688,3 +688,19 @@ var fnIsolatedFormatter = InvoiceFormatter.statusText.bind(oControllerStub);
 
 
 在 *test/unit/unitTests.qunit.html* 中配置 QUnit 等测试框架的版本，在 *test/unit/unitTests.qunit.js* 中加载单元测试的类。
+
+
+
+Step 29: Integration Test with OPA
+
+在 test 目录下新建目录 integration，
+
+```
+├── navigationJourney.js
+├── opaTests.qunit.html
+├── opaTests.qunit.js
+└── pages
+    └── App.js
+```
+
+使用 Given - When - Then 的模式创建 OPA 测试。*pages/App.js* 中使用 `Opa5.createPageObjects()` 创建一个 Page 对象， actions 中定义的方法使用 When 调用，assertions 中定义的方法使用 Then 调用。
