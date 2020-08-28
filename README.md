@@ -747,3 +747,28 @@ Step 33: Routing back and History
 
 使用  sap.ui.core.routing.History 接管页面的浏览历史记录。
 
+
+
+Step 34: Custom control
+
+extend sap.ui.core.Control 可以自定义 Control，自定义的 Control 如下解构：
+
+```js
+return Control.extend("your.namespace.control.controlName", {
+    metadata: {},
+    init: function() {},
+    renderer: function(oRm, oControl) {}
+})
+```
+
+- metadata
+
+  metadata 定义了控件的 properties, events, and aggregations。SAPUI5 会自动为这些 properties, events, and aggregations 创建 setter 和 getter。
+
+- renderer
+
+  该方法定义了空间在 HTML 中的 DOM 结构， 一般而言它会自动被调用一旦控件的属性有变化。`oRm` 参数是 SAPUI5 的 render manager，用来将字符串和控件属性写入 HTML 页面中。
+
+- init
+
+  `init` 方法会在控件初始化时被自动执行。
