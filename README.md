@@ -741,3 +741,9 @@ oEvent.getSource(): 返回被点击的 ObjectListItem 控件。
 
 sap.ui.model.Context:  绑定上下文
 
+
+
+Step 33: Routing back and History
+
+使用  sap.ui.core.routing.History 接管页面的浏览历史记录。
+
