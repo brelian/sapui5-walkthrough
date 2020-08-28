@@ -586,3 +586,20 @@ onFilterInvoices: function (oEvent) {
 }
 ```
 
+
+
+Step 25: Sorting and Grouping
+
+使用 Aggregation  Binding 时，可以通过 `sorter` 属性指定排序规则，如
+
+```js
+items="{
+	path: 'invoice>/Invoices',
+    sorter: {
+        path: 'ShipperName',
+        group: true
+    }
+}"
+```
+
+sorter 是一个对象，可以用 `descending` 降序排列，使用 `group` 将相同数据分组。
