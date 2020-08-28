@@ -562,3 +562,27 @@ propertyName="{= ${model>pattern} }"
 Step 23: Custom Formatters
 
 属性绑定的数据可以使用 format 进行格式化，自定义的格式化函数一般放在 model/formatter.js 下。
+
+
+
+Step 24: Filtering
+
+List 有一个0..1 的 headerToolbar aggregation，里面允许装填一个 Toolbar，Toolbar 里面使用 SearchField 可以构造搜索输入框。
+
+使用 `oEvent.getParameter("query")` 获取搜索框的用户输入，使用 sap.ui.model.Filter 构造过滤器，并使用 `Binding.filter()` 方法应用它。
+
+```js
+onFilterInvoices: function (oEvent) {
+    var aFilter = [];
+    var sQuery = oEvent.getParameter("query");
+
+    if (sQuery) {
+        aFilter.push(new Filter("ProductName", FilterOperator.Contains, sQuery));
+    }
+
+    var oList = this.byId("invoiceList");
+    var oBinding = oList.getBinding("items");
+    oBinding.filter(aFilter);
+}
+```
+
