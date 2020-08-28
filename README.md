@@ -633,3 +633,21 @@ Step 26: Remote OData Service
 *Component.js* 初始化项目时会根据以上配置自动创建一个 sap.ui.model.odata.v2.ODataModel，并以 `invoice` 作为 model 名字注册到全局。
 
 遇到跨域问题请参考 https://sapui5.hana.ondemand.com/#/topic/5bb388fc289d44dca886c8fa25da466e.html#loio5bb388fc289d44dca886c8fa25da466e/CORSAnywhere
+
+
+
+Step 27: Mock Server Configuration
+
+创建 *test/mockServer.html* 文件，内容与 *index.html* 近乎相同，用于启动 MockServer，不同的是 `data-sap-ui-oninit` 指向的是 MockerServer
+
+创建 localService 目录，包含如下文件，
+
+```shell
+localService
+├── metadata.xml // http://services.odata.org/V2/Northwind/Northwind.svc/$metadata
+├── mockServer.js
+└── mockdata
+    └── Invoices.json
+```
+
+使用 sap.ui.core.util.MockServer 创建 MockServer
