@@ -556,3 +556,9 @@ Step 22: Express Binding
 ```
 propertyName="{= ${model>pattern} }"
 ```
+
+
+
+Step 23: Custom Formatters
+
+属性绑定的数据可以使用 format 进行格式化，自定义的格式化函数一般放在 model/formatter.js 下。
