@@ -542,3 +542,9 @@ Step 20: Aggregation bindings
 ```
 
 items aggregation 和 invoice model 通过 `items="{invoice>/Invoices}"`的 Invoices 资源进行了绑定，这种绑定叫做 Aggregation Binding。`ObjectListItem` 定义了每个 item 的渲染模板，使用绑定的 model 名字 + `>` 取数据，如 `invoice>Quantity` 表示 invoice model 中的 Invoices 数组下每个元素中的 Quantity 属性。
+
+
+
+Step 21: Data Types
+
+sap.ui.model.type 下有支持的数据类型，使用 format 属性可以自定义 format 函数用于格式化显示输入数据。
