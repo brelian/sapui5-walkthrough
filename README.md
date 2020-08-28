@@ -651,3 +651,23 @@ localService
 ```
 
 使用 sap.ui.core.util.MockServer 创建 MockServer
+
+
+
+Step 28: Unit Test with QUnit
+
+*InvoiceFormatter.js* 中引用了 this 对象，this 对象实际上是一个 Controller，因此我们需要构造一个 controller
+
+```js
+// Arrange
+var oControllerStub = {
+    getView: this.stub().returns({
+        getModel: this.stub().withArgs("i18n").returns(this._oResourceModel)
+    })
+};
+var fnIsolatedFormatter = InvoiceFormatter.statusText.bind(oControllerStub);
+```
+
+
+
+在 *test/unit/unitTests.qunit.html* 中配置 QUnit 等测试框架的版本，在 *test/unit/unitTests.qunit.js* 中加载单元测试的类。
