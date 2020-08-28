@@ -15,6 +15,9 @@ sap.ui.define([
             this.setModel(oModel);
             // set common dialog
             this._helloDialog = new HelloDialog(this.getRootControl());
+
+            // Create view based on url/hash
+            this.getRouter().initialize();
         },
         exit: function () {
             this._helloDialog.destroy();

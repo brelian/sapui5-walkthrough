@@ -709,4 +709,27 @@ Step 29: Integration Test with OPA
 
 Step 30: Debugging Tools
 
- CTRL + ALT + SHIFT + S: 打开 Debug 窗口  
+ CTRL + ALT + SHIFT + S: 打开 Debug 窗口
+
+
+
+Step 31: Routing and Navigation
+
+使用 sap.m.routing.Router 自动管理路由，在 *manifest.json* 中添加三个属性 `config` 、`routes`  和 `targets`。
+
+- `config`
+
+  全局路由信息配置，包括 View 的类型，View 的路径，是否同步加载 View 等配置。
+
+- `routes`
+
+  每个路由都都名字，模式和一个或多个 targets 组成，当 URL 匹配到模式时，自动加载 target 指向的 view.
+
+- `targets`
+
+  定义 view 的 ID 和 Name。
+
+
+
+在 Component.js 中使用 `this.getRouter()` 获取全局注册的路由，在 Controller 中使用 `sap.ui.core.UIComponent.getRouterFor(this)` 获取路由，使用 `Router.navTo()` 导航到新的页面。
+
