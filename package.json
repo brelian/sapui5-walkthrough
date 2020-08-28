@@ -4,6 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "ui5 serve"
+    "start": "ui5 serve",
+    "proxy": "node scripts/proxy.js"
+  },
+  "dependencies": {
+    "cors-anywhere": "^0.4.3"
   }
 }

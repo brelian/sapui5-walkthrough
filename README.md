@@ -603,3 +603,33 @@ items="{
 ```
 
 sorter 是一个对象，可以用 `descending` 降序排列，使用 `group` 将相同数据分组。
+
+
+
+Step 26: Remote OData Service
+
+在 *manifest.json* 文件的 `sap.app` 中，可以通过 `dataSources` 属性配置远程数据源，并在 `sap.ui5` 的 models 中通过指定的 key 使用配置好的数据源。如下配置一个 invoiceRemote 的 OData 类型的数据源，
+
+*manifest.json*
+
+```json
+...
+  "sap.app": {
+    ...
+    "dataSources": {
+      "invoiceRemote": {
+        "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
+    }
+    ...
+  }
+...
+```
+
+*Component.js* 初始化项目时会根据以上配置自动创建一个 sap.ui.model.odata.v2.ODataModel，并以 `invoice` 作为 model 名字注册到全局。
+
+遇到跨域问题请参考 https://sapui5.hana.ondemand.com/#/topic/5bb388fc289d44dca886c8fa25da466e.html#loio5bb388fc289d44dca886c8fa25da466e/CORSAnywhere
