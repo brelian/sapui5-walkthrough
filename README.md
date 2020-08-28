@@ -733,3 +733,11 @@ Step 31: Routing and Navigation
 
 在 Component.js 中使用 `this.getRouter()` 获取全局注册的路由，在 Controller 中使用 `sap.ui.core.UIComponent.getRouterFor(this)` 获取路由，使用 `Router.navTo()` 导航到新的页面。
 
+
+
+Step 32: Routing with Parameters
+
+oEvent.getSource(): 返回被点击的 ObjectListItem 控件。
+
+sap.ui.model.Context:  绑定上下文
+
