@@ -25,7 +25,7 @@ sap.ui.define([
             var oBinding = oList.getBinding("items");
             oBinding.filter(aFilter);
         },
-        onListItemPress: function (oEvent) {
+        onPress: function (oEvent) {
             var oItem = oEvent.getSource();
             var oContext = oItem.getBindingContext("invoice");
             var invoicePath = oContext.getPath().substr(1);
