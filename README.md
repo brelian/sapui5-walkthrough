@@ -548,3 +548,11 @@ items aggregation 和 invoice model 通过 `items="{invoice>/Invoices}"`的 Invo
 Step 21: Data Types
 
 sap.ui.model.type 下有支持的数据类型，使用 format 属性可以自定义 format 函数用于格式化显示输入数据。
+
+Step 22: Express Binding
+
+`${model>pattern}` 使用 `$` + model pattern 可以以此作为表达式运算的单元，因此可以对属性绑定的数据进行表达式运算，这种绑定叫做 Expression Binding。
+
+```
+propertyName="{= ${model>pattern} }"
+```
