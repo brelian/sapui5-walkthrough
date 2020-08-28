@@ -1,3 +1,20 @@
+## 项目启动
+
+```shell
+git clone https://github.com/brelian/sapui5-walkthrough.git
+cd sapui5-walkthrough
+npm run proxy & # 启动代理，处理 CORS 问题
+npm start
+```
+
+
+
+查阅 Git 提交记录 https://github.com/brelian/sapui5-walkthrough/commits/master 没次提交对应 Walkthrough 的一个步骤。
+
+
+
+## 学习笔记
+
 SAPUI5 开发环境：
 
 三种环境： SAP Web IDE / OpenUI5 / Node.js
